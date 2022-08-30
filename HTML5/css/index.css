@@ -104,9 +104,9 @@ body {
     #fff 70%,
     #fff 100%
   );
-  background: purple;
 }
 
 .footer-inner {
   background: orange;
+  height: 15vh;
 }
