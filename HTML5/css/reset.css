@@ -87,8 +87,8 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 1em;
   font: inherit;
+  font-size: 1em;
   vertical-align: baseline;
 }
 
@@ -97,7 +97,6 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
-
 
 /* HTML5 display-role reset for older browsers */
 
