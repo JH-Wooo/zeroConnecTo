@@ -1,3 +1,5 @@
+@import url("./fonts.css");
+@import url("./fontello.css");
 @import url("./normalize.css");
 @import url("./reset.css");
 
@@ -59,6 +61,7 @@ a {
   background: white;
   position: relative;
   padding: 0 30px;
+  border-radius: 0 0 15px 15px;
 }
 
 .logo {
@@ -67,6 +70,7 @@ a {
   top: 45px;
   left: 65px;
 }
+
 /* 멤버 링크 모음 */
 .member {
   padding: 4px 0;
@@ -84,12 +88,103 @@ a {
 }
 
 /* 메인메뉴 */
+
+.menu {
+  height: 47px;
+  padding-left: 232px;
+  border-top: 2px solid currentColor;
+  border-radius: 0 0 5px 5px;
+  background: #e85e2c
+    linear-gradient(
+      to bottom,
+      #1e5799 0%,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%
+    );
+}
+.menu-item {
+  float: left;
+  position: relative;
+  border-left: 2px solid #fff;
+}
+
+.menu-button {
+  line-height: 45px;
+  border: 0;
+  background: transparent;
+  padding: 0 21px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+.is-active .sub-menu {
+  display: block;
+}
+
+.is-active .menu-button {
+  color: #ff0;
+}
+.is-active .menu-button::after {
+  content: "";
+  background: #000;
+  display: block;
+  height: 2px;
+}
+
+.sub-menu {
+  position: absolute;
+  display: none;
+  top: 47px;
+  white-space: nowrap;
+  padding: 4px 0;
+}
+
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
+}
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+  right: 0;
+}
+
+.sub-menu li {
+  margin-right: 0.2rem;
+}
+
+.sub-menu a::before {
+  content: "\f192";
+  font-family: "fontello";
+  display: inline-block;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e800";
+}
+
+.sub-menu li,
+.sub-menu a {
+  display: inline-block;
+}
+.sub-menu a {
+  outline: none;
+  font-size: 1.1rem;
+  padding: 6px 8px;
+}
 .navigation {
   padding-bottom: 40px;
 }
-.menu {
-  background: orange;
-}
+
 /*비주얼*/
 
 .visual {
