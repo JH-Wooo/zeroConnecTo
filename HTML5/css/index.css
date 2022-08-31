@@ -29,6 +29,11 @@ body {
   );
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* 레이아웃 */
 
 .header,
@@ -43,6 +48,29 @@ body {
 /*헤더*/
 .header {
   background: white;
+  position: relative;
+  padding: 0 30px;
+}
+
+.logo {
+  /* background: blue; */
+  position: absolute;
+  top: 45px;
+  left: 65px;
+}
+/* 멤버 링크 모음 */
+.member {
+  padding: 4px 0;
+  text-align: right;
+  transform: translateX(8px);
+}
+.member li,
+.member a {
+  display: inline-block;
+}
+.member a {
+  padding: 6px 8px;
+  text-transform: uppercase;
 }
 
 /*비주얼*/
