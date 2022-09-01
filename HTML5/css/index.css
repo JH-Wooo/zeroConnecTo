@@ -204,6 +204,45 @@ a {
 
 .visual {
   height: 120px;
+  position: relative;
+}
+
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.visual::before {
+  /* background: pink; */
+
+  background-repeat: no-repeat;
+  background-image: url("./images/ani_flower_01.png"),
+    url("./images/ani_flower_02.png");
+  background-position: 0 -10px, 600px 0;
+  animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::after {
+  /* background: yellow; */
+  background-repeat: no-repeat;
+  background-image: url("./images/ani_flower_03.png"),
+    url("./images/ani_flower_04.png");
+  background-position: 300px 0, 800px 0;
+  animation: fadeEffect 2000ms infinite alternate 1000ms;
 }
 .visual-text {
   font-family: Georgia, "Times New Roman", Times, serif;
