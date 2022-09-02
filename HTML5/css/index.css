@@ -141,7 +141,6 @@ a {
   display: none;
   top: 47px;
   white-space: nowrap;
-
   padding: 4px 0;
 }
 
@@ -170,6 +169,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .sub-menu a:hover::before,
 .sub-menu a:focus::before {
   content: "\e800";
@@ -229,7 +229,6 @@ a {
 
 .visual::before {
   /* background: pink; */
-
   background-repeat: no-repeat;
   background-image: url("./images/ani_flower_01.png"),
     url("./images/ani_flower_02.png");
@@ -245,11 +244,13 @@ a {
   background-position: 300px 0, 800px 0;
   animation: fadeEffect 2000ms infinite alternate 1000ms;
 }
+
 .visual-text {
   font-family: Georgia, "Times New Roman", Times, serif;
   animation-name: moveEffect;
   animation-duration: 2000ms;
   animation-fill-mode: forwards;
+  display: inline-block;
   position: relative;
   z-index: 10;
 }
@@ -369,10 +370,6 @@ a {
 
 /* 링크  */
 
-.group {
-  margin-top: 35px;
-}
-
 .validation-list {
   margin-top: 25px;
   /* display: flex;
@@ -395,6 +392,69 @@ a {
   color: #f00;
 }
 
+/* 웹 관련 용어 */
+.term {
+  background-color: #ccc;
+  background: linear-gradient(to bottom, #ccc 0%, #eee);
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.term-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.term-list {
+  margin-top: 15px;
+}
+
+.term-list > div {
+  margin-bottom: 10px;
+  display: flow-root;
+}
+.term-list-subject,
+.term-list-thumbnail {
+  float: right;
+  width: 145px;
+}
+
+.term-list-subject {
+  font-weight: 500;
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+.term-list-thumbnail img {
+  vertical-align: middle;
+  /* display: block; */
+}
+.term-list-brief {
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+.cross .term-list-subject,
+.cross .term-list-brief {
+  float: left;
+}
+
+.cross .term-list-thumbnail {
+  float: right;
+}
+
+/* .term-list-brief::after {
+  content: "";
+  clear: both;
+  display: block;
+} */
+
+.term-list-thumbnail:last-child {
+  float: right;
+}
+
 /* 슬로건 */
 .slogan {
   background: lime;
@@ -415,4 +475,7 @@ a {
 .footer-inner {
   background: orange;
   height: 15vh;
+}
+
+.odd {
 }
