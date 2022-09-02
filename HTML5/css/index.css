@@ -452,6 +452,42 @@ a {
   display: block;
 } */
 
+/* 검색 */
+.search-form {
+  background: yellow;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: black;
+  border-radius: 10px 10px 0 0;
+  width: 380px;
+  padding: 10px;
+  background: linear-gradient(to bottom, #aaa 0%, #ccc);
+}
+.search-form fieldset {
+  display: flex;
+  width: 350px;
+  align-items: center;
+  font-size: 13px;
+  justify-content: center;
+}
+.button-fill {
+  background: black;
+  color: white;
+  outline: 0;
+  border: 0;
+  border-radius: 5px;
+  height: 20px;
+}
+.form-group {
+  margin-right: 10px;
+}
+.search {
+  margin-right: 10px;
+}
+.form-group-label {
+  margin-right: 10px;
+}
 /* 슬로건 */
 .slogan {
   background: lime;
