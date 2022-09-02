@@ -415,7 +415,7 @@ a {
   display: flow-root;
 }
 .term-list-subject,
-.term-list-thumbnail {
+.term-list-brief {
   float: right;
   width: 145px;
 }
@@ -433,7 +433,8 @@ a {
 }
 .term-list-brief {
   line-height: 1.5;
-  margin-top: 5px;
+  width: 145px;
+  float: right;
 }
 
 .cross .term-list-subject,
@@ -450,10 +451,6 @@ a {
   clear: both;
   display: block;
 } */
-
-.term-list-thumbnail:last-child {
-  float: right;
-}
 
 /* 슬로건 */
 .slogan {
