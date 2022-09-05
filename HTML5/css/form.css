@@ -13,11 +13,13 @@
   height: 28px;
   padding: 2px 2px 2px 8px;
   margin-left: 12px;
+  min-width: 0;
   flex-grow: 1;
 }
 
 .form-group-label {
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  flex-shrink: 0;
 }
 /* 버튼 컴포넌트 */
 .button {
