@@ -691,8 +691,32 @@ a {
 }
 
 .related {
-  /* background-color: pink; */
   margin-top: 10px;
+}
+
+.related-list {
+  margin-top: 10px;
+  height: 27px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  transition: height 400ms, padding 400ms 400ms;
+}
+
+.related-list a {
+  display: block;
+  line-height: 25px;
+  text-indent: 25px;
+}
+
+.related-list:hover,
+.related-list:focus {
+  padding: 10px 0;
+  height: 147px;
+}
+.relate-list a:focus {
+  outline-offset: -2px;
 }
 
 /* 슬로건 */
