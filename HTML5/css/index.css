@@ -633,8 +633,13 @@ a {
   background: #ccc linear-gradient(to bottom, #ccc, #eee);
 }
 
+.margin-top-default {
+  margin-top: 20px;
+}
+
 .event-title,
-.related-title {
+.related-title,
+.favorite-title {
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -666,6 +671,7 @@ a {
   background-image: url("./images/back_forward.png");
   background-repeat: no-repeat;
   padding: 18px 0 0 0;
+  line-height: 24px;
 }
 
 .event-button-wrapper button:focus {
@@ -696,12 +702,18 @@ a {
 
 .related-list {
   margin-top: 10px;
-  height: 27px;
-  overflow: hidden;
   background: #fff;
   border: 1px solid #aaa;
   border-radius: 5px;
+  height: 27px;
+  overflow: hidden;
   transition: height 400ms, padding 400ms 400ms;
+}
+
+.related-list:hover,
+.related-list:focus {
+  height: 147px;
+  padding: 10px 0;
 }
 
 .related-list a {
@@ -710,13 +722,71 @@ a {
   text-indent: 25px;
 }
 
-.related-list:hover,
-.related-list:focus {
-  padding: 10px 0;
-  height: 147px;
-}
-.relate-list a:focus {
+.related-list a:focus {
   outline-offset: -2px;
+}
+
+.favorite {
+  position: relative;
+}
+
+.favorite-list {
+  list-style: none;
+  margin-top: 10px;
+  counter-reset: number;
+}
+
+.favorite-list li {
+  counter-increment: number;
+  margin-top: 8px;
+  /* font-size: 18px; */
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.favorite-list li::before {
+  content: counter(number);
+  color: #fff;
+  background-color: #aaa;
+  border-radius: 2px;
+  display: inline-block;
+  width: 1.2em;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+.favorite-list em {
+  display: inline-block;
+  background-image: url("./images/rank.png");
+  background-repeat: no-repeat;
+  width: 9px;
+  height: 11px;
+  margin-left: auto;
+  /* position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%); */
+  /* margin-top: -5px; */
+  /* float: right; */
+  /* margin-top: 5px; */
+}
+
+.favorite-list .stop {
+  background-position: 0 50%;
+}
+
+.favorite-list .down {
+  background-position: 0 100%;
+}
+
+.favorite-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
 }
 
 /* 슬로건 */
