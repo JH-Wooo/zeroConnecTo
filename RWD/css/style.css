@@ -37,6 +37,7 @@
 }
 
 .searchForm__group .formInput__input {
+  appearance: none;
   border: 1px solid var(--silver);
   border-radius: 0.25rem;
   min-width: 0;
