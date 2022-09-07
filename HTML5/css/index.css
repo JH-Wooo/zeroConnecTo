@@ -425,7 +425,7 @@ a {
 
 .term-list > div {
   margin-top: 10px;
-  display: flow-root;
+  overflow: hidden;
 }
 
 .term-list-subject,
@@ -672,10 +672,6 @@ a {
   background-repeat: no-repeat;
   padding: 18px 0 0 0;
   line-height: 24px;
-}
-
-.event-button-wrapper button:focus {
-  /* outline-offset: -2px; */
 }
 
 .event-button-next {
