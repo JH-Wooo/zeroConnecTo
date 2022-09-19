@@ -1,10 +1,14 @@
-/* 반응형 웹카페 */
 @import url(./normalize.css);
 @import url(./a11y.css);
 @import url(./theme.css);
 @import url(./base.css);
 
 /* 공통 스타일 */
+/* 헤더 */
+.appHeader {
+  padding: var(--spacing-base) var(--spacing-lg);
+}
+
 /* 공통 로고 */
 .logo {
   width: 12.75rem;
@@ -15,15 +19,15 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: url("../images/webcafe-logo.png") no-repeat;
+  background: url("./../images/webcafe-logo.png") no-repeat;
   background-size: cover;
 }
 
-/* 멤버 서비스 */
+/* 공통 멤버서비스 */
 .memberOnly {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -38,13 +42,13 @@
 
 .searchForm__group .formInput__input {
   appearance: none;
-  border: 1px solid var(--silver);
-  border-radius: 0.25rem;
-  min-width: 0;
   width: 100%;
   height: 2rem;
+  min-width: 0;
   background: var(--white);
   padding: 0.125rem 0.75rem;
+  border: 1px solid var(--silver);
+  border-radius: 0.25rem;
 }
 
 .button {
@@ -72,182 +76,169 @@
   color: var(--secondary-color);
   border: 1px solid currentColor;
 }
-/* 헤더 */
-.appHeader {
-  padding: var(--spacing-base) var(--spacing-lg);
-}
 
-/*  네비게이션 */
+/* 내비게이션 */
 .appNavigation {
-  background: pink;
+  background-color: pink;
   padding: var(--spacing-base) var(--spacing-lg);
 }
 
-/* 메인 콘텐츠 */
+/* 공통 메인 콘텐츠 */
 .appMain {
-  background: blue;
   padding: var(--spacing-base) var(--spacing-lg);
 }
 
-/* 추천 서적 */
-.book {
-  background: yellow;
+/* 공통 메인 콘텐츠 섹션 제목 */
+.appMain [class*="__title"] {
+  margin-bottom: var(--spacing-base);
+  font-weight: 700;
+  font-size: var(--text-md);
 }
 
-/* 새소식 */
-
-.news {
-  background: orange;
+.appMain [class*="__enTitle"] {
+  font-weight: 400;
+  font-size: var(--text-base);
 }
 
-/* 게시판*/
-.board {
-  background: skyblue;
+.sprite {
+  min-height: 3.75rem;
+  padding-left: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-image: url(./../images/sprite_main.png);
+  background-repeat: no-repeat;
 }
 
-/*인기 사이트 */
-.favorite {
-  background: violet;
+.spriteBook {
+  background-position: 0 0;
 }
 
-/* 트위터 */
-.twitter {
-  background: green;
+.spriteNews {
+  background-position: 0 -230px;
 }
+
+.spriteBoard {
+  background-position: 0 -115px;
+}
+
+.spriteFavorite {
+  background-position: 0 -345px;
+}
+
+.spriteTwitter {
+  background-position: 0 -460px;
+}
+
+.accentBook {
+  color: var(--accent-book);
+}
+.accentNews {
+  color: var(--accent-news);
+}
+.accentBoard {
+  color: var(--accent-board);
+}
+.accentFavorite {
+  color: var(--accent-favorite);
+}
+.accentTwitter {
+  color: var(--accent-twitter);
+}
+
+/* 공통 메인 콘텐츠 섹션 본문 */
+.appMain [class*="__summary"] {
+  line-height: 1.5;
+  margin-top: var(--spacing-base);
+}
+
+/* 공통 추천 서적 */
+.book__cover {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.book__coverCaption {
+  margin-top: var(--spacing-base);
+}
+
+.book__info {
+  text-align: center;
+  margin-top: var(--spacing-base);
+}
+
+.book__info dt:nth-child(1),
+.book__info dd:nth-child(2) {
+  display: inline-block;
+}
+
+.ratingStar {
+  font-size: var(--text-xl);
+}
+
+/* 공통 새소식 */
+.news__date {
+  display: block;
+  text-align: right;
+  margin-top: var(--spacing-xs);
+}
+
+/* 반응형 iframe */
+.iframeWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 0 !important;
+}
+
+.iframeRatio-4-3 {
+  padding-top: 75%;
+}
+
+.iframeRatio-16-9 {
+  padding-top: 56.25%;
+}
+
+.iframeWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* 푸터 */
-
 .appFooter {
-  background: lime;
+  background-color: lime;
   padding: var(--spacing-xl) var(--spacing-lg);
 }
 
 /* 모바일 스타일 */
-
 @media (max-width: 767px) {
   /* 모바일 헤더 */
   .appHeader {
     display: flex;
     flex-flow: column nowrap;
-    background: var(--primary-color);
+    background-color: var(--primary-color);
   }
 
-  /*모바일 멤버 서비스 */
+  /* 모바일 멤버 서비스 */
   .memberOnly {
     order: -1;
     color: var(--white);
     font-size: var(--text-sm);
   }
-  .menu {
-    background: var(--accent-opacity-color);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100vh;
-    backdrop-filter: blur(4px);
-    padding: var(--spacing-lg);
-    /* transform: translateX(-150%); */
-    transition: all 300ms;
-  }
-
-  .menu__item {
-    border-bottom: 1px solid var(--silver);
-  }
-
-  .menu__link {
-    display: block;
-    padding: 4px 0;
-  }
-
-  .menu.is--active {
-    transform: none;
-  }
 
   /* 모바일 검색 폼 */
-
   .searchForm__group .formInput {
     flex-grow: 1;
   }
 
-  /* 모바일 애니메이션 */
-  .appNavigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 100vh;
-    transform: translateX(-120%);
-  }
-
-  /* 모바일 메인 콘텐츠 */
-  .appMain {
-    display: flex;
-    flex-flow: row wrap;
-    gap: var(--spacing-base);
-  }
-
-  /* 모바일 메인 콘텐츠 섹션*/
-  .book,
-  .news,
-  .board,
-  .twitter,
-  .favorite {
-    width: 100%;
-  }
-}
-
-/* 데스크탑 스타일*/
-@media (min-width: 768px) {
-  /* 데스크탑 헤더 */
-  .appHeader {
-    max-width: var(--container-width);
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-  }
-
-  /* 데스크탑 로고 */
-  .logo {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* 데스크탑 검색 폼 */
-  .searchForm__group {
-    justify-content: flex-end;
-  }
-
-  .searchForm__group .formInput {
-    width: 25rem;
-  }
-
-  /* 데스크탑 메인메뉴 제어버튼 */
-  .button--burger {
-    display: none;
-  }
-
-  /* 데스크탑 메인 메뉴 */
-  .menu {
-    background: var(--secondary-color);
-    padding: var(--spacing-base) var(--spacing-lg);
-  }
-
-  .menu__list {
-    max-width: var(--container-width);
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md);
-  }
-
-  .menu__link {
-    color: var(--white);
-    text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
-  }
+  /* 모바일 메인메뉴 제어버튼 */
   .buttonWrapper {
     overflow: hidden;
     position: absolute;
@@ -255,6 +246,7 @@
     right: var(--spacing-lg);
     padding: 0.25rem;
   }
+
   .button--burger {
     width: 2rem;
     height: 2rem;
@@ -293,14 +285,108 @@
     transform: translateY(50%) rotate(-45deg);
   }
 
-  /* 데스크탑 메인 메뉴*/
+  /* 모바일 메인 메뉴 */
   .menu {
+    background: var(--accent-opacity-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+    padding: var(--spacing-lg);
+    transform: translateX(-150%);
+    transition: all 300ms;
+  }
+
+  .menu__item {
+    border-bottom: 1px solid var(--silver);
+    padding: 4px 0;
+  }
+
+  .menu__link {
+    display: block;
+    padding: 6px 0;
+  }
+
+  .menu.is--active {
+    transform: none;
+  }
+  /* 모바일 메인 콘텐츠 */
+  .appMain {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacing-base);
+  }
+
+  /* 모바일 메인 콘텐츠 섹션 */
+  .book,
+  .news,
+  .board,
+  .favorite,
+  .twitter {
+    width: 100%;
+  }
+}
+
+/* 데스크탑 스타일 */
+@media (min-width: 768px) {
+  /* 데스크탑 헤더 */
+  .appHeader {
+    max-width: var(--container-width);
     margin-left: auto;
     margin-right: auto;
-    /* background: orange; */
+    position: relative;
   }
+
+  /* 데스크탑 로고 */
+  .logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* 데스크탑 검색 폼 */
+  .searchForm__group {
+    justify-content: flex-end;
+  }
+
+  .searchForm__group .formInput {
+    width: 25rem;
+  }
+
+  /* 데스크탑 메인메뉴 제어버튼 */
+  .button--burger {
+    display: none;
+  }
+
+  /* 데스크탑 메인 메뉴 */
+  .menu {
+    background: var(--secondary-color);
+    padding: var(--spacing-base) var(--spacing-lg);
+  }
+
+  .menu__list {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    max-width: var(--container-width);
+  }
+
+  .menu__link {
+    color: var(--white);
+    text-shadow: 1px 1px 0 var(--black), -1px -1px 0 var(--black);
+  }
+
   /* 데스크탑 메인 콘텐츠 */
   .appMain {
+    max-width: var(--container-width);
+    margin-left: auto;
+    margin-right: auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
@@ -309,19 +395,18 @@
       "book book book book twitter twitter twitter twitter twitter favorite favorite favorite"
       "book book book book . board board board board board board board";
     gap: var(--spacing-base);
-    max-width: var(--container-width);
-
-    margin-left: auto;
-    margin-right: auto;
   }
 
   /* 데스크탑 추천 서적 */
   .book {
     grid-area: book;
   }
+
+  /* 데스크탑 새소식 */
   .news {
     grid-area: news;
   }
+
   /* 데스크탑 게시판 */
   .board {
     grid-area: board;
